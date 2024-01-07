@@ -1,9 +1,12 @@
 @import './base.css';
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 1731px;
+  width: 100%;
   font-weight: normal;
 }
 
@@ -15,21 +18,34 @@ a,
   padding: 3px;
 }
 
+.conteudo{
+  /* p-[25px] flex justify-center gap-12 w-[100vh] h-auto */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 30px;
+  width: 100vh;
+  height: auto;
+  padding: 25px;
+}
+
+.tecnologias{
+  padding: 20px;
+  display: grid;
+  width: 80%;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 40px;
+  column-gap: 40px;
+}
 @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
   }
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+@media screen and (max-width: 768px) {
+  .conteudo{
+    flex-direction: column;
+    align-items: center;
   }
 }
