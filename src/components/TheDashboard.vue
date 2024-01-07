@@ -7,7 +7,7 @@
             <v-img
                 aspect-ratio="16/9"
                 cover
-                src="src/assets/me.jpeg"
+                src="./me.jpeg"
                 class="h-[250px] w-[250px] rounded-[200px]"
                 ></v-img>
         </div>
@@ -26,7 +26,7 @@
                             :width="25"
                             aspect-ratio="1/1"
                             cover
-                            src="src/assets/work.png"
+                            src="/about/work.png"
                             class="h-[25px]"
                             ></v-img>
                         </div>
@@ -40,7 +40,7 @@
                             :width="25"
                             aspect-ratio="1/1"
                             cover
-                            src="src/assets/education.png"
+                            src="/about/education.png"
                             class="h-[25px]"
                             ></v-img>
                         </div>
@@ -54,7 +54,7 @@
                             :width="25"
                             aspect-ratio="1/1"
                             cover
-                            src="src/assets/bulb.png"
+                            src="/about/bulb.png"
                             class="h-[25px]"
                             ></v-img>
                         </div>
@@ -68,7 +68,7 @@
                                 :width="20"
                                 aspect-ratio="1/1"
                                 cover
-                                src="src/assets/rocket.png"
+                                src="/about/rocket.png"
                                 class="h-[20px]"
                                 ></v-img>
                         </div>
@@ -91,7 +91,7 @@
                         :width="40"
                         aspect-ratio="1/1"
                         cover
-                        src="src/assets/tecs/frontend.png"
+                        src="/tecs/frontend.png"
                         class="h-[40px]"
                         ></v-img>
                 </div>
@@ -105,7 +105,7 @@
                             :width="40"
                             aspect-ratio="1/1"
                             cover
-                            src="src/assets/stacks/css.png"
+                            src="/stacks/css.png"
                             class="h-[40px]"
                             >
                             <v-tooltip
@@ -119,7 +119,7 @@
                             :width="40"
                             aspect-ratio="1/1"
                             cover
-                            src="src/assets/stacks/js.png"
+                            src="/stacks/js.png"
                             class="h-[40px]"
                             >
                             <v-tooltip
@@ -133,7 +133,7 @@
                             :width="40"
                             aspect-ratio="1/1"
                             cover
-                            src="src/assets/stacks/react.png"
+                            src="/stacks/react.png"
                             class="h-[40px]"
                             >
                             <v-tooltip
@@ -147,7 +147,7 @@
                             :width="40"
                             aspect-ratio="1/1"
                             cover
-                            src="src/assets/stacks/next.png"
+                            src="/stacks/next.png"
                             class="h-[40px]"
                             >
                             <v-tooltip
@@ -164,7 +164,7 @@
                         :width="40"
                         aspect-ratio="1/1"
                         cover
-                        src="src/assets/tecs/backend.png"
+                        src="/tecs/backend.png"
                         class="h-[40px]"
                         ></v-img>
                 </div>
@@ -178,7 +178,7 @@
                             :width="40"
                             aspect-ratio="1/1"
                             cover
-                            src="src/assets/stacks/java.png"
+                            src="/stacks/java.png"
                             class="h-[40px]"
                             >
                             <v-tooltip
@@ -192,7 +192,7 @@
                             :width="40"
                             aspect-ratio="1/1"
                             cover
-                            src="src/assets/stacks/grails.png"
+                            src="/stacks/grails.png"
                             class="h-[40px]"
                             >
                             <v-tooltip
@@ -206,7 +206,7 @@
                             :width="40"
                             aspect-ratio="1/1"
                             cover
-                            src="src/assets/stacks/nest.png"
+                            src="/stacks/nest.png"
                             class="h-[40px]"
                             >
                             <v-tooltip
@@ -220,7 +220,7 @@
                             :width="40"
                             aspect-ratio="1/1"
                             cover
-                            src="src/assets/stacks/node.png"
+                            src="/stacks/node.png"
                             class="h-[40px]"
                             >
                             <v-tooltip
@@ -234,7 +234,7 @@
                             :width="40"
                             aspect-ratio="1/1"
                             cover
-                            src="src/assets/stacks/springboot.png"
+                            src="/stacks/springboot.png"
                             class="h-[40px]"
                             >
                             <v-tooltip
@@ -251,7 +251,7 @@
                         :width="40"
                         aspect-ratio="1/1"
                         cover
-                        src="src/assets/tecs/database.png"
+                        src="/tecs/database.png"
                         class="h-[40px]"
                         ></v-img>
                 </div>
@@ -265,7 +265,7 @@
                             :width="50"
                             aspect-ratio="1/1"
                             cover
-                            src="src/assets/stacks/oracle.png"
+                            src="/stacks/oracle.png"
                             class="h-[50px]"
                             >
                             <v-tooltip
@@ -279,7 +279,7 @@
                             :width="50"
                             aspect-ratio="1/1"
                             cover
-                            src="src/assets/stacks/mysql.png"
+                            src="/stacks/mysql.png"
                             class="h-[50px]"
                             >
                             <v-tooltip
@@ -293,7 +293,7 @@
                             :width="50"
                             aspect-ratio="1/1"
                             cover
-                            src="src/assets/stacks/postgresql.png"
+                            src="/stacks/postgresql.png"
                             class="h-[50px]"
                             >
                             <v-tooltip
@@ -310,7 +310,7 @@
                         :width="40"
                         aspect-ratio="1/1"
                         cover
-                        src="src/assets/tecs/devops.png"
+                        src="/tecs/devops.png"
                         class="h-[40px]"
                         ></v-img>
                 </div>
