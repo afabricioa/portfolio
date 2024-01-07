@@ -1,8 +1,8 @@
 <script setup>
-import { RouterView } from 'vue-router';
+import TheDashboard from './components/TheDashboard.vue';
 
 </script>
 
 <template>
-  <RouterView/>
+  <TheDashboard/>
 </template>
