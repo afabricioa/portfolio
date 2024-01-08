@@ -10,14 +10,25 @@
   font-weight: normal;
 }
 
-a,
-.green {
+a{
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+  background: none;
 }
 
+a:hover{
+  background: none;
+  background-color: white !important;
+  font-weight: 700;
+}
+
+.topicos{
+  /* flex flex-col gap-4 w-[50%] text-justify */
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  width: 50%;
+  text-align: justify;
+}
 .conteudo{
   /* p-[25px] flex justify-center gap-12 w-[100vh] h-auto */
   display: flex;
@@ -27,6 +38,7 @@ a,
   width: 100vh;
   height: auto;
   padding: 25px;
+  margin-top: 40px;
 }
 
 .tecnologias{
@@ -37,6 +49,35 @@ a,
   row-gap: 40px;
   column-gap: 40px;
 }
+
+.projetos{
+  padding: 20px;
+  display: grid;
+  width: 80%;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 40px;
+  column-gap: 40px;
+}
+
+.cardProjeto{
+  width: 155%;
+  height: 110%;
+}
+
+.aboutme{
+  font-size: 20px;
+}
+
+.nome{
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.descricao{
+  margin-left: 5px;
+}
+
+
 @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
@@ -44,8 +85,32 @@ a,
 }
 
 @media screen and (max-width: 768px) {
+  .topicos{
+    width: 80%;
+  }
+  
   .conteudo{
     flex-direction: column;
     align-items: center;
+  }
+
+  .tecnologias{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .projetos{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .cardProjeto{
+    width: 100%;
+  }
+
+  .aboutme{
+    text-align: center;
+  }
+
+  .nome{
+    text-align: center;
   }
 }

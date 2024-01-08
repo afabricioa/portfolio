@@ -1,4 +1,9 @@
-<script setup>
+<script>
+  export default {
+    data: () => ({
+      show: false,
+    }),
+  }
 </script>
 
 <template>
@@ -11,12 +16,12 @@
                 class="h-[250px] w-[250px] rounded-[200px]"
                 ></v-img>
         </div>
-        <div class="flex flex-col gap-4 w-[50%] text-justify">
+        <div class="topicos">
             <div>
-                <h3 class="text-[20px]">Sobre mim</h3>
+                <h3 class="aboutme">Sobre mim</h3>
             </div>
             <div>
-                <h3 class="font-bold text-[25px]">Antônio Fabrício</h3>
+                <h3 class="nome">Antônio Fabrício</h3>
             </div>
             <div class="text-[15px]">
                 <ul class="grid gap-y-4">
@@ -26,11 +31,11 @@
                             :width="25"
                             aspect-ratio="1/1"
                             cover
-                            src="/about/work.png"
+                            src="./work.png"
                             class="h-[25px]"
                             ></v-img>
                         </div>
-                        <div class="ml-2">
+                        <div class="descricao">
                             Desenvolvedor Pleno com experiência Full Stack desde 2020
                         </div>
                     </li>
@@ -40,11 +45,11 @@
                             :width="25"
                             aspect-ratio="1/1"
                             cover
-                            src="/about/education.png"
+                            src="./education.png"
                             class="h-[25px]"
                             ></v-img>
                         </div>
-                        <div class="ml-2">
+                        <div class="descricao">
                             Formado em Ciência da Computação
                         </div>
                     </li>
@@ -54,11 +59,11 @@
                             :width="25"
                             aspect-ratio="1/1"
                             cover
-                            src="/about/bulb.png"
+                            src="./bulb.png"
                             class="h-[25px]"
                             ></v-img>
                         </div>
-                        <div class="ml-2">
+                        <div class="descricao">
                             Interesse em front-end, back-end, estudando desenvolvimento Fullcycle
                         </div>
                     </li>
@@ -68,11 +73,11 @@
                                 :width="20"
                                 aspect-ratio="1/1"
                                 cover
-                                src="/about/rocket.png"
+                                src="./rocket.png"
                                 class="h-[20px]"
                                 ></v-img>
                         </div>
-                        <div class="ml-3">
+                        <div class="descricao">
                             Busco realocação para trabalhar como desenvolvedor
                         </div>
                     </li>
@@ -85,13 +90,13 @@
             Tecnologias
         </div>
         <div class="tecnologias">
-            <div class="w-auto bg-[#434361] rounded-lg flex justify-center align-center flex-col p-6">
+            <div class="w-auto bg-[#283593] rounded-lg flex justify-center align-center flex-col p-6">
                 <div class="w-[50px] h-[50px] bg-[#6395f2] rounded-[50%] p-2">
                     <v-img
                         :width="40"
                         aspect-ratio="1/1"
                         cover
-                        src="/tecs/frontend.png"
+                        src="./frontend.png"
                         class="h-[40px]"
                         ></v-img>
                 </div>
@@ -105,7 +110,7 @@
                             :width="40"
                             aspect-ratio="1/1"
                             cover
-                            src="/stacks/css.png"
+                            src="./css.png"
                             class="h-[40px]"
                             >
                             <v-tooltip
@@ -119,7 +124,7 @@
                             :width="40"
                             aspect-ratio="1/1"
                             cover
-                            src="/stacks/js.png"
+                            src="./js.png"
                             class="h-[40px]"
                             >
                             <v-tooltip
@@ -133,7 +138,7 @@
                             :width="40"
                             aspect-ratio="1/1"
                             cover
-                            src="/stacks/react.png"
+                            src="./react.png"
                             class="h-[40px]"
                             >
                             <v-tooltip
@@ -147,7 +152,7 @@
                             :width="40"
                             aspect-ratio="1/1"
                             cover
-                            src="/stacks/next.png"
+                            src="./next.png"
                             class="h-[40px]"
                             >
                             <v-tooltip
@@ -156,15 +161,29 @@
                             >NextJS</v-tooltip>
                         </v-img>
                     </li>
+                    <li>
+                        <v-img
+                            :width="65"
+                            aspect-ratio="1/1"
+                            cover
+                            src="./tailwind.png"
+                            class="h-[40px]"
+                            >
+                            <v-tooltip
+                                activator="parent"
+                                location="top"
+                            >Tailwind</v-tooltip>
+                        </v-img>
+                    </li>
                 </ul>
             </div>
-            <div class="w-auto bg-[#434361] rounded-lg flex justify-center align-center flex-col p-4">
+            <div class="w-auto bg-[#283593] rounded-lg flex justify-center align-center flex-col p-4">
                 <div class="w-[50px] h-[50px] bg-[#6395f2] rounded-[50%] p-2">
                     <v-img
                         :width="40"
                         aspect-ratio="1/1"
                         cover
-                        src="/tecs/backend.png"
+                        src="./backend.png"
                         class="h-[40px]"
                         ></v-img>
                 </div>
@@ -178,7 +197,7 @@
                             :width="40"
                             aspect-ratio="1/1"
                             cover
-                            src="/stacks/java.png"
+                            src="./java.png"
                             class="h-[40px]"
                             >
                             <v-tooltip
@@ -192,7 +211,7 @@
                             :width="40"
                             aspect-ratio="1/1"
                             cover
-                            src="/stacks/grails.png"
+                            src="./grails.png"
                             class="h-[40px]"
                             >
                             <v-tooltip
@@ -206,7 +225,7 @@
                             :width="40"
                             aspect-ratio="1/1"
                             cover
-                            src="/stacks/nest.png"
+                            src="./nest.png"
                             class="h-[40px]"
                             >
                             <v-tooltip
@@ -220,7 +239,7 @@
                             :width="40"
                             aspect-ratio="1/1"
                             cover
-                            src="/stacks/node.png"
+                            src="./node.png"
                             class="h-[40px]"
                             >
                             <v-tooltip
@@ -234,7 +253,7 @@
                             :width="40"
                             aspect-ratio="1/1"
                             cover
-                            src="/stacks/springboot.png"
+                            src="./springboot.png"
                             class="h-[40px]"
                             >
                             <v-tooltip
@@ -245,19 +264,19 @@
                     </li>
                 </ul>
             </div>
-            <div class="w-auto bg-[#434361] rounded-lg flex justify-center align-center flex-col p-4">
+            <div class="w-auto bg-[#283593] rounded-lg flex justify-center align-center flex-col p-4">
                 <div class="w-[50px] h-[50px] bg-[#6395f2] rounded-[50%] p-2">
                     <v-img
                         :width="40"
                         aspect-ratio="1/1"
                         cover
-                        src="/tecs/database.png"
+                        src="./database.png"
                         class="h-[40px]"
                         ></v-img>
                 </div>
                 <h4 class="mt-4 font-bold text-[18px]">Database</h4>
                 <div class="mt-4">
-                    front-endfront-endfront-endfront-endfront-endfront-endfront-endfront-endfront-endfront-end
+                    Experiência com banco dados relacionais participando da definição, criação, manipulação de dados e tabelas de acordo com a necessidade e as especificações da modelagem.
                 </div>
                 <ul class="mt-4 grid grid-cols-3 gap-6">
                     <li>
@@ -265,7 +284,7 @@
                             :width="50"
                             aspect-ratio="1/1"
                             cover
-                            src="/stacks/oracle.png"
+                            src="./oracle.png"
                             class="h-[50px]"
                             >
                             <v-tooltip
@@ -279,7 +298,7 @@
                             :width="50"
                             aspect-ratio="1/1"
                             cover
-                            src="/stacks/mysql.png"
+                            src="./mysql.png"
                             class="h-[50px]"
                             >
                             <v-tooltip
@@ -293,7 +312,7 @@
                             :width="50"
                             aspect-ratio="1/1"
                             cover
-                            src="/stacks/postgresql.png"
+                            src="./postgresql.png"
                             class="h-[50px]"
                             >
                             <v-tooltip
@@ -304,21 +323,144 @@
                     </li>
                 </ul>
             </div>
-            <div class="w-auto bg-[#434361] rounded-lg flex justify-center align-center flex-col p-4">
+            <div class="w-auto bg-[#283593] rounded-lg flex justify-center align-center flex-col p-4">
                 <div class="w-[50px] h-[50px] bg-[#6395f2] rounded-[50%] p-2">
                     <v-img
                         :width="40"
                         aspect-ratio="1/1"
                         cover
-                        src="/tecs/devops.png"
+                        src="./devops.png"
                         class="h-[40px]"
                         ></v-img>
                 </div>
                 <h4 class="mt-4 font-bold text-[18px]">CI/CD</h4>
                 <div class="mt-4">
-                    front-endfront-endfront-endfront-endfront-endfront-endfront-endfront-endfront-endfront-end
+                    Estudando tecnologias para integração e entrega da aplicação em ambientes de teste e produção, mergulhado e criando projetos utilizando as melhores ferramentas que facilitem o deploy da aplicação nos ambientes criados.
                 </div>
+                <ul class="mt-4 grid grid-cols-4 gap-6">
+                    <li>
+                        <v-img
+                            :width="50"
+                            aspect-ratio="1/1"
+                            cover
+                            src="./aws.png"
+                            class="h-[50px]"
+                            >
+                            <v-tooltip
+                                activator="parent"
+                                location="top"
+                            >AWS</v-tooltip>
+                        </v-img>
+                    </li>
+                    <li>
+                        <v-img
+                            :width="50"
+                            aspect-ratio="1/1"
+                            cover
+                            src="./docker.png"
+                            class="h-[50px]"
+                            >
+                            <v-tooltip
+                                activator="parent"
+                                location="top"
+                            >Docker</v-tooltip>
+                        </v-img>
+                    </li>
+                    <li>
+                        <v-img
+                            :width="50"
+                            aspect-ratio="1/1"
+                            cover
+                            src="./github.png"
+                            class="h-[50px]"
+                            >
+                            <v-tooltip
+                                activator="parent"
+                                location="top"
+                            >GitHub</v-tooltip>
+                        </v-img>
+                    </li>
+                    <li>
+                        <v-img
+                            :width="50"
+                            aspect-ratio="1/1"
+                            cover
+                            src="./gitlab.png"
+                            class="h-[50px]"
+                            >
+                            <v-tooltip
+                                activator="parent"
+                                location="top"
+                            >GitLab</v-tooltip>
+                        </v-img>
+                    </li>
+                </ul>
             </div>
+        </div>
+    </v-container>
+    <v-container class="flex flex-col justify-center align-center text-center mb-[20px]">
+        <div class="text-[22px] text-justify">
+            Projetos
+        </div>
+        <div class="projetos">
+            <v-card class="cardProjeto">
+                <v-img
+                    src="./pcli.png"
+                    height="200px"
+                ></v-img>
+
+                <v-card-title>
+                    PCLI Elite Coders
+                </v-card-title>
+
+                <v-btn
+                    color="indigo-darken-2"
+                    size="small"
+                    @click="show = !show"
+                    class="text-white"
+                >
+                    Ver Mais
+                </v-btn>
+
+                <v-expand-transition>
+                    <div v-show="show">
+                        <v-divider></v-divider>
+                        <v-card-text>
+                            Replica de uma landing page feita com ReactJS e Tailwind, se comporta de forma responsiva para todas as principais resoluções
+                        </v-card-text>
+                    </div>
+                </v-expand-transition>
+                <div class="flex justify-around mt-4">
+                    <div class="flex flex-row bg-white border-[1px] border-[#283593] p-[3px] rounded cursor-pointer">
+                        <v-img
+                            :width="20"
+                            aspect-ratio="1/1"
+                            cover
+                            src="./github.png"
+                            class="h-[20px]"
+                            ></v-img>
+                            <h5 class="ml-2 hover:font-bold">
+                            <a href="https://github.com/afabricioa/pcli-elitecoders" target="_blank">
+                                Repositório
+                            </a>
+                        </h5>
+                    </div>
+                    <div class="flex flex-row bg-white border-[1px] border-[#283593] p-[3px] rounded cursor-pointer">
+                        <v-img
+                            :width="20"
+                            aspect-ratio="1/1"
+                            cover
+                            src="./aws.png"
+                            class="h-[20px] mt-[3px]"
+                            ></v-img>
+                        <h5 class="ml-2 hover:font-bold">
+                            <a href="https://pcli-elitecoders-challenge.s3.sa-east-1.amazonaws.com/index.html" target="_blank">
+                                Deploy
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+            </v-card>
         </div>
     </v-container>
 </template>
