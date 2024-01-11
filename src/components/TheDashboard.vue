@@ -2,11 +2,56 @@
   export default {
     data: () => ({
       show: false,
+      showAma: false,
+      idioma: localStorage.getItem("lng"),
+      cinza: "grayscale",
+      selecionado: "grayscale-0 border-2 border-white"
     }),
+    methods: {
+        handleLanguage(idm){
+            localStorage.setItem("lng", idm)
+            location.reload()
+        },
+        openInNewTab(url) {
+            window.open(url, '_blank', 'noreferrer');
+        }
+    }
   }
 </script>
 
 <template>
+    <v-container class="language">
+        <div>
+            <v-img
+                :width="60"
+                aspect-ratio="1/1"
+                cover
+                src="./pt.png"
+                class="h-[40px] rounded-lg"
+                :class="[idioma == 'eng' ? cinza : selecionado]"
+                @click="() => handleLanguage('pt')"
+                >
+                <v-tooltip
+                    activator="parent"
+                    location="top"
+                >Português</v-tooltip></v-img>
+        </div>
+        <div>
+            <v-img
+                :width="60"
+                aspect-ratio="1/1"
+                cover
+                src="./eng.png"
+                class="h-[40px] rounded-lg"
+                :class="[idioma == 'pt' ? cinza : selecionado]"
+                @click="() => handleLanguage('eng')"
+                >
+                <v-tooltip
+                    activator="parent"
+                    location="top"
+                >Inglês</v-tooltip></v-img>
+        </div>
+    </v-container>
     <v-container ref="sobre" class="conteudo">
         <div>
             <v-img
@@ -18,7 +63,7 @@
         </div>
         <div class="topicos">
             <div>
-                <h3 class="aboutme">Sobre mim</h3>
+                <h3 class="aboutme">{{$t("message.sobre")}}</h3>
             </div>
             <div>
                 <h3 class="nome">Antônio Fabrício</h3>
@@ -36,7 +81,7 @@
                             ></v-img>
                         </div>
                         <div class="descricao">
-                            Desenvolvedor Pleno com experiência Full Stack desde 2020
+                            {{ $t("message.titulo") }}
                         </div>
                     </li>
                     <li class="flex">
@@ -50,7 +95,7 @@
                             ></v-img>
                         </div>
                         <div class="descricao">
-                            Formado em Ciência da Computação
+                            {{ $t("message.formacao") }}
                         </div>
                     </li>
                     <li class="flex">
@@ -64,7 +109,7 @@
                             ></v-img>
                         </div>
                         <div class="descricao">
-                            Interesse em front-end, back-end, estudando desenvolvimento Fullcycle
+                            {{ $t("message.interesse") }}
                         </div>
                     </li>
                     <li class="flex">
@@ -78,16 +123,59 @@
                                 ></v-img>
                         </div>
                         <div class="descricao">
-                            Busco realocação para trabalhar como desenvolvedor
+                            {{ $t("message.busca") }}
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
     </v-container>
+    <v-container class="flex justify-center">
+        <div class="contatos">
+            <div class="cursor-pointer">
+                <v-img
+                    :width="40"
+                    aspect-ratio="1/1"
+                    cover
+                    src="./linkedin.png"
+                    class="h-[40px] mt-[3px]"
+                    @click="openInNewTab('https://www.linkedin.com/in/antoniofabricio/')"
+                    ><v-tooltip
+                        activator="parent"
+                        location="top"
+                    >Abrir LinkedIn</v-tooltip></v-img>
+            </div>
+            <div class="cursor-pointer">
+                <v-img
+                    :width="40"
+                    aspect-ratio="1/1"
+                    cover
+                    src="./zap.png"
+                    class="h-[40px] mt-[3px]"
+                    @click="openInNewTab('https://wa.me/5586988409105')"
+                    ><v-tooltip
+                        activator="parent"
+                        location="top"
+                    >Enviar Mensagem</v-tooltip></v-img>
+            </div>
+            <div class="cursor-pointer">
+                <v-img
+                    :width="40"
+                    aspect-ratio="1/1"
+                    cover
+                    src="./gith.png"
+                    class="h-[40px] mt-[3px]"
+                    @click="openInNewTab('https://github.com/afabricioa')"
+                    ><v-tooltip
+                        activator="parent"
+                        location="top"
+                    >Abrir GitHub</v-tooltip></v-img>
+            </div>
+        </div>
+    </v-container>
     <v-container class="flex flex-col justify-center align-center text-center">
         <div class="text-[22px] text-justify">
-            Tecnologias
+            {{ $t("message.tecs") }}
         </div>
         <div class="tecnologias">
             <div class="w-auto bg-[#283593] rounded-lg flex justify-center align-center flex-col p-6">
@@ -102,7 +190,7 @@
                 </div>
                 <h4 class="mt-4 font-bold text-[18px]">Frontend</h4>
                 <div class="mt-4 h-[45%]">
-                    Desenvolvimento de sites, desde projetos simples até soluções complexas, garantindo uma experiência do usuário excepcional. Minha abordagem envolve a criação de sites responsivos, utilizando frameworks e bibliotecas modernas para alcançar padrões de alta qualidade.
+                    {{ $t("message.frontend") }}
                 </div>
                 <ul class="mt-4 grid grid-cols-4 gap-6">
                     <li>
@@ -189,7 +277,7 @@
                 </div>
                 <h4 class="mt-4 font-bold text-[18px]">Backend</h4>
                 <div class="mt-4 h-[45%]">
-                    Construção de APIs, sistemas robustos e escaláveis, utilização de arquiteturas modernas e codificação limpa para facilitar manutenção utilizando uma variedade de tecnologias.
+                    {{ $t("message.backend") }}
                 </div>
                 <ul class="mt-4 grid grid-cols-5 gap-6">
                     <li>
@@ -274,9 +362,9 @@
                         class="h-[40px]"
                         ></v-img>
                 </div>
-                <h4 class="mt-4 font-bold text-[18px]">Database</h4>
-                <div class="mt-4">
-                    Experiência com banco dados relacionais participando da definição, criação, manipulação de dados e tabelas de acordo com a necessidade e as especificações da modelagem.
+                <h4 class="mt-4 font-bold text-[18px]">{{ $t("message.banco") }}</h4>
+                <div class="mt-4 h-[40%]">
+                    {{ $t("message.database") }}
                 </div>
                 <ul class="mt-4 grid grid-cols-3 gap-6">
                     <li>
@@ -334,8 +422,8 @@
                         ></v-img>
                 </div>
                 <h4 class="mt-4 font-bold text-[18px]">CI/CD</h4>
-                <div class="mt-4">
-                    Estudando tecnologias para integração e entrega da aplicação em ambientes de teste e produção, mergulhado e criando projetos utilizando as melhores ferramentas que facilitem o deploy da aplicação nos ambientes criados.
+                <div class="mt-4 h-[40%]">
+                    {{ $t("message.cicd") }}
                 </div>
                 <ul class="mt-4 grid grid-cols-4 gap-6">
                     <li>
@@ -400,7 +488,7 @@
     </v-container>
     <v-container class="flex flex-col justify-center align-center text-center mb-[20px]">
         <div class="text-[22px] text-justify">
-            Projetos
+            {{ $t("message.projetos") }}
         </div>
         <div class="projetos">
             <v-card class="cardProjeto">
@@ -419,14 +507,14 @@
                     @click="show = !show"
                     class="text-white"
                 >
-                    Ver Mais
+                    {{ show ? $t("message.verMenos") : $t("message.verMais") }}
                 </v-btn>
 
                 <v-expand-transition>
                     <div v-show="show">
                         <v-divider></v-divider>
                         <v-card-text>
-                            Replica de uma landing page feita com ReactJS e Tailwind, se comporta de forma responsiva para todas as principais resoluções
+                            {{ $t("message.pcli") }}
                         </v-card-text>
                     </div>
                 </v-expand-transition>
@@ -441,7 +529,7 @@
                             ></v-img>
                             <h5 class="ml-2 hover:font-bold">
                             <a href="https://github.com/afabricioa/pcli-elitecoders" target="_blank">
-                                Repositório
+                                {{ $t("message.repositorio") }}
                             </a>
                         </h5>
                     </div>
@@ -455,6 +543,64 @@
                             ></v-img>
                         <h5 class="ml-2 hover:font-bold">
                             <a href="https://pcli-elitecoders-challenge.s3.sa-east-1.amazonaws.com/index.html" target="_blank">
+                                Deploy
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+            </v-card>
+            <v-card class="cardProjeto">
+                <v-img
+                    src="./ama.png"
+                    height="200px"
+                ></v-img>
+
+                <v-card-title>
+                    AMA - API SpringBoot
+                </v-card-title>
+
+                <v-btn
+                    color="indigo-darken-2"
+                    size="small"
+                    @click="showAma = !showAma"
+                    class="text-white"
+                >
+                    {{ showAma ? $t("message.verMenos") : $t("message.verMais") }}
+                </v-btn>
+
+                <v-expand-transition>
+                    <div v-show="showAma">
+                        <v-divider></v-divider>
+                        <v-card-text>
+                            {{ $t("message.ama") }}
+                        </v-card-text>
+                    </div>
+                </v-expand-transition>
+                <div class="flex justify-around mt-4">
+                    <div class="flex flex-row bg-white border-[1px] border-[#283593] p-[3px] rounded cursor-pointer">
+                        <v-img
+                            :width="20"
+                            aspect-ratio="1/1"
+                            cover
+                            src="./github.png"
+                            class="h-[20px]"
+                            ></v-img>
+                            <h5 class="ml-2 hover:font-bold">
+                            <a href="https://github.com/afabricioa/ama-desafio" target="_blank">
+                                {{ $t("message.repositorio") }}
+                            </a>
+                        </h5>
+                    </div>
+                    <div class="flex flex-row bg-white border-[1px] border-[#283593] p-[3px] rounded cursor-pointer">
+                        <v-img
+                            :width="20"
+                            aspect-ratio="1/1"
+                            cover
+                            src="./aws.png"
+                            class="h-[20px] mt-[3px]"
+                            ></v-img>
+                        <h5 class="ml-2 hover:font-bold">
+                            <a href="http://54.147.166.247:8080/swagger-ui/index.html" target="_blank">
                                 Deploy
                             </a>
                         </h5>

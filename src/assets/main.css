@@ -54,13 +54,12 @@ a:hover{
   padding: 20px;
   display: grid;
   width: 80%;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   row-gap: 40px;
   column-gap: 40px;
 }
 
 .cardProjeto{
-  width: 155%;
   height: 110%;
 }
 
@@ -77,6 +76,20 @@ a:hover{
   margin-left: 5px;
 }
 
+.language{
+  /* flex flex-row justify-end gap-4 bg-red-100 */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.contatos{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px;
+  width: 40%;
+}
 
 @media (hover: hover) {
   a:hover {
@@ -112,5 +125,9 @@ a:hover{
 
   .nome{
     text-align: center;
+  }
+
+  .language{
+    justify-content: center;
   }
 }
