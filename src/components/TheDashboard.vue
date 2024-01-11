@@ -4,8 +4,8 @@
       show: false,
       showAma: false,
       idioma: localStorage.getItem("lng"),
-      cinza: "grayscale",
-      selecionado: "grayscale-0 border-2 border-white"
+      cinza: "grayscale hover:grayscale-0 cursor-pointer",
+      selecionado: "grayscale-0 border-2 border-black"
     }),
     methods: {
         handleLanguage(idm){
@@ -14,6 +14,19 @@
         },
         openInNewTab(url) {
             window.open(url, '_blank', 'noreferrer');
+        },
+        downloadPdf() {
+            // create element <a> for download PDF
+            const nomePDF = this.idioma == "pt" ? "Antonio Fabricio - Desenvolvedor Pleno.pdf" : "Antonio Fabricio - Mid Developer.pdf"
+            const link = document.createElement('a');
+            link.href = `./${nomePDF}`;
+            link.target = '_blank';
+            link.download = nomePDF;
+
+            // Simulate a click on the element <a>
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
     }
   }
@@ -67,6 +80,7 @@
             </div>
             <div>
                 <h3 class="nome">Antônio Fabrício</h3>
+                <h3>fabricio.a.s@hotmail.com</h3>
             </div>
             <div class="text-[15px]">
                 <ul class="grid gap-y-4">
@@ -172,6 +186,106 @@
                     >Abrir GitHub</v-tooltip></v-img>
             </div>
         </div>
+    </v-container>
+    <v-container>
+        <div class="flex justify-center">
+            <v-btn elevation="8" @click="downloadPdf">{{ $t("message.curriculo") }}</v-btn>
+        </div>
+    </v-container>
+    <v-container>
+        <v-timeline>
+            <v-timeline-item
+                dot-color="purple-lighten-2"
+                fill-dot
+            >
+            <template v-slot:opposite>
+                2012 - 2018
+            </template>
+            <v-card>
+                <v-card-title>
+                    <h2 class="font-weight-light">
+                        {{$t("message.graduacao")}}
+                    </h2>
+                </v-card-title>
+                <v-card-text>
+                    {{$t("message.textoGraduacao")}}
+                </v-card-text>
+            </v-card>
+            </v-timeline-item>
+
+            <v-timeline-item
+                dot-color="amber-lighten-1"
+                fill-dot
+                size="x-small"
+                >
+                <template v-slot:opposite>
+                    {{ $t("message.tempoAsatec") }}
+                </template>
+                <v-card>
+                    <v-card-title class="bg-amber-lighten-1 justify-end">
+                    <h2 class="me-4 font-weight-light">
+                        {{$t("message.asatec")}}
+                    </h2>
+                    </v-card-title>
+                    <v-card-text>
+                        {{$t("message.textoAsatec")}}
+                    </v-card-text>
+                </v-card>
+            </v-timeline-item>
+
+            <v-timeline-item
+                dot-color="cyan-lighten-1"
+                fill-dot
+            >
+            <template v-slot:opposite>
+                {{ $t("message.tempoRav") }}
+            </template>
+            <v-card>
+                <v-card-title class="bg-cyan-lighten-1">
+                <h2 class="font-weight-light">
+                    {{$t("message.rav")}}
+                </h2>
+                </v-card-title>
+                <v-card-text>
+                    {{$t("message.textoRav")}}
+                </v-card-text>
+            </v-card>
+            </v-timeline-item>
+
+            <v-timeline-item
+            dot-color="red-lighten-1"
+            fill-dot
+            size="x-small"
+            >
+            <template v-slot:opposite>
+                {{ $t("message.tempoLider") }}
+            </template>
+            <v-card>
+                <v-card-title class="bg-red-lighten-1 justify-end">
+                <h2 class="me-4 font-weight-light">
+                    {{$t("message.lider")}}
+                </h2>
+                </v-card-title>
+                <v-card-text>
+                    {{$t("message.textoLider")}}
+                </v-card-text>
+            </v-card>
+            </v-timeline-item>
+
+            <v-timeline-item
+            dot-color="green-lighten-1"
+            fill-dot
+            >
+            <template v-slot:opposite>
+                {{ $t("message.temposAtuais") }}
+            </template>
+            <v-card>
+                <v-card-text>
+                    {{$t("message.diasAtuais")}}
+                </v-card-text>
+            </v-card>
+            </v-timeline-item>
+        </v-timeline>
     </v-container>
     <v-container class="flex flex-col justify-center align-center text-center">
         <div class="text-[22px] text-justify">
